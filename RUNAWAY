@@ -6,7 +6,7 @@ use_bpm 100
 use_synth :piano
 
 with_fx :gverb do
-  
+
   12.times do
     play :e6, sustain: 20, amp: 4, release: 300
     sleep 2
@@ -14,8 +14,48 @@ with_fx :gverb do
 end
 
 with_fx :reverb do
+
+  1.times do
+
+    3.times do
+      play :e6, sustain: 40, amp: 4, release: 400
+      sleep 2
+    end
+
+    play :e5, sustain: 40, amp: 4, release: 400
+    sleep 2
+
+    3.times do
+      play :d6, sustain: 40, amp: 4, release: 400
+      sleep 2
+    end
+
+    play :d5, sustain: 40, amp: 4, release: 400
+    sleep 2
+
+    3.times do
+      play :c6, sustain: 40, amp: 4, release: 400
+      sleep 2
+    end
+
+    play :c5, sustain: 40, amp: 4, release: 400
+    sleep 2
+
+    2.times do
+      play :a5, sustain: 40, amp: 4, release: 400
+      sleep 2
+    end
+
+    play :g5, sustain: 40, amp: 4, release: 3400
+    sleep 2
+    play :e6, sustain: 40, amp: 4, release: 3400
+    sleep 2
+  end
+end
+
+with_fx :reverb do
   
-  live_loop :mainloop do
+  live_loop :mainpiano do
     
     3.times do
       play :e6, sustain: 40, amp: 4, release: 400
@@ -52,3 +92,25 @@ with_fx :reverb do
     sleep 2
   end
 end
+
+live_loop :drums do
+  
+  sample :tabla_ghe2, amp: 5
+  sleep 0.25
+  sample :tabla_ghe4, amp: 5
+  sleep 0.25
+  sample :tabla_ghe2, amp: 5
+  sleep 0.25
+  sample :tabla_ghe4, amp: 5
+  sleep 0.25
+  sample :tabla_ghe1, amp: 5
+  sleep 0.25
+  sample :tabla_ghe2, amp: 5
+  sleep 0.25
+  sample :tabla_ghe4, amp: 5
+  sleep 0.25
+  sample :tabla_ghe2, amp: 5
+  sleep 0.25
+  sample :tabla_ghe4, amp: 5
+end
+
